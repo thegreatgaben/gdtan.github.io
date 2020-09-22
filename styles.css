@@ -1,6 +1,7 @@
 :root {
     --primary-color: #57cbcc;
     --secondary-color: #afbac4;
+    --complementary-color: #CC5857;
 }
 
 @font-face {
@@ -49,6 +50,8 @@ span, p {
 
 .modal-header {
     color: #fff;
+    border-bottom: 1px solid var(--primary-color);
+    background-color: #1d2024;
 }
 
 .modal-content {
@@ -66,13 +69,13 @@ span, p {
 }
 
 .btn-outline-secondary {
-    color: var(--secondary-color);
-    border-color: var(--secondary-color);
+    color: var(--complementary-color);
+    border-color: var(--complementary-color);
 }
 
 .btn-outline-secondary:hover {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
+    background-color: var(--complementary-color);
+    border-color: var(--complementary-color);
 }
 /**********************/
 

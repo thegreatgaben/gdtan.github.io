@@ -1,17 +1,74 @@
+:root {
+    --primary-color: #57cbcc;
+    --secondary-color: #afbac4;
+}
+
+@font-face {
+    font-family: 'Rubik Regular';
+    src: url('static/font/Rubik/Rubik-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins Regular';
+    src: url('static/font/Poppins/Poppins-Regular.ttf');
+}
+
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Rubik Regular', sans-serif;
 }
 
-/* Bootstrap override */
+h1 {
+    color: #fff;
+}
+
+span, p {
+    font-family: 'Poppins Regular', sans-serif !important;
+    color: var(--secondary-color);
+}
+
+/* Bootstrap overrides */
 .bg-dark {
     background-color: #1d2024 !important;
 }
 
+.navbar-nav .active>.nav-link {
+    color: var(--primary-color) !important;
+}
+
+.badge-primary {
+    background-color: #353b43;
+}
+
+.modal-header {
+    color: #fff;
+}
+
 .modal-content {
     background-color: #292F36;
-    color: #afbac4;
 }
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-secondary {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+/**********************/
 
 .left-arrow-link {
     position: fixed;
@@ -130,11 +187,11 @@ section {
 
 .home-content h2 {
     font-size: 20px;
-    color: #57cbcc;
+    color: var(--primary-color);
 }
 
 .home-content h1 {
-    font-weight: 700;
+    font-weight: 550;
     font-size: 70px;
 }
 
@@ -146,7 +203,6 @@ section {
 
 .home-content p {
     max-width: 500px;
-    color: #afbac4;
 }
 
 .portfolio-container {
@@ -208,7 +264,6 @@ section {
     position: absolute;
     top: 0;
     z-index: 1;
-    background-color: rgba(0, 0, 0, .8);
     color: #fff;
 }
 
@@ -239,7 +294,12 @@ section {
 
 .about-content {
     width: 100%;
-    color: #fff;
+}
+
+@media (min-width: 1025px) {
+    .about-content {
+        margin-top: 60px;
+    }
 }
 
 .about-grid {
@@ -274,7 +334,7 @@ section {
 
 .contact-card {
     color: #fff;
-    background-color: #1d2024;
+    background-color: #292F36;
     padding: 50px;
 }
 
@@ -304,5 +364,9 @@ section {
     .contact-detail a {
         margin-left: 60px;
     }
+}
+
+.icon-credits a {
+    color: var(--primary-color);
 }
 

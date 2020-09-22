@@ -146,7 +146,9 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
     portfolioTools.empty();
     for (let i = 0; i < portfolioDetail.tools.length; i++) {
         const tool = portfolioDetail.tools[i];
-        portfolioTools.append(`<span class="badge badge-pill badge-primary ml-2">${tool}</span>`);
+        let extraClass = '';
+        if (i > 0) extraClass = 'ml-2';
+        portfolioTools.append(`<span class="badge badge-pill badge-primary ${extraClass}">${tool}</span>`);
     }
 
     $('#portfolio-live-btn').attr('href', portfolioDetail.live_url);

@@ -28,9 +28,7 @@ function urlHashHandler(hash) {
         leftArrowLink.href = '#home';
         rightArrowLink.href = '#about';
 
-        if (window.innerWidth < 768) {
-            portfolioSection.style = 'overflow-y: scroll';
-        }
+        portfolioSection.style = 'overflow-y: scroll';
 
     } else if (hash === '#about') {
         if (leftArrow.classList.contains('d-none')) {
@@ -40,6 +38,8 @@ function urlHashHandler(hash) {
         }
         leftArrowLink.href = '#portfolio';
         rightArrowLink.href = '#contact';
+
+        portfolioSection.style = 'overflow-y: hidden';
 
         if (window.innerWidth < 768) {
             aboutSection.style = 'overflow-y: scroll';
@@ -79,7 +79,7 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
         'pce': {
             'title': 'Dr Insights',
             'description': 'This is a description',
-            'image_url': 'https://via.placeholder.com/400',
+            'image_url': 'static/img/pce-cover.png',
             'tools': [
                 'Vue.js',
                 'Vuetify',
@@ -92,7 +92,7 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
         'shibumi': {
             'title': 'Python OCR MVP',
             'description': 'Python',
-            'image_url': 'https://via.placeholder.com/450',
+            'image_url': 'static/img/shibumi-cover.png',
             'tools': [
                 'React',
                 'Next.js',
@@ -109,9 +109,9 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
             'code_url': 'https://gitlab.com/TheGreatGaben/python-ocr-mvp',
         },
         'mopress': {
-            'title': 'MOPress',
+            'title': 'Tantan News / MOPress',
             'description': 'Tantan',
-            'image_url': 'https://via.placeholder.com/500',
+            'image_url': 'static/img/tantan-cover.png',
             'tools': [
                 'Bootstrap',
                 'jQuery',
@@ -125,7 +125,7 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
         'makkiah': {
             'title': 'Makkiah',
             'description': 'Makkiah',
-            'image_url': 'https://via.placeholder.com/550',
+            'image_url': 'static/img/makkiah-cover.png',
             'tools': [
                 'React',
                 'Ant Design',

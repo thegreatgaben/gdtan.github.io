@@ -41,6 +41,12 @@ span, p {
     background-color: #353b43;
 }
 
+@media (min-width: 768px) {
+    .modal-dialog {
+        max-width: 700px;
+    }
+}
+
 .modal-header {
     color: #fff;
 }
@@ -192,7 +198,7 @@ section {
 
 .home-content h1 {
     font-weight: 550;
-    font-size: 70px;
+    font-size: 75px;
 }
 
 @media (max-width: 480px) {
@@ -215,7 +221,38 @@ section {
 
 .portfolio-content {
     width: 100%;
-    color: #fff;
+}
+
+.portfolio-grid {
+    width: 100%;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 225px;
+    margin-top: 35px; 
+}
+
+@media (min-width: 1024px) {
+    .portfolio-container {
+        max-width: 800px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .portfolio-container {
+        margin-top: 120px;
+    }
+    .portfolio-content {
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1020px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+        grid-auto-rows: 190px;
+    } 
+    
 }
 
 @media (max-width: 480px) {
@@ -224,18 +261,15 @@ section {
         display: block;
     }
     .portfolio-content {
+        margin-top: 0px;
         margin-bottom: 40px;
+    }
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        grid-auto-rows: 195px;
     }
 }
 
-.portfolio-grid {
-    width: 100%;
-    display: grid;
-    grid-gap: 30px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: 250px;
-    margin-top: 35px; 
-}
 
 .portfolio-item {
     position: relative;
@@ -244,6 +278,7 @@ section {
 
 .portfolio-item img {
     height: 100%;
+    object-fit: cover;
 }
 
 .portfolio-item:hover {
@@ -274,7 +309,7 @@ section {
 
 .portfolio-modal-image {
     width: 100%;
-    max-height: 275px;
+    height: auto;
 }
 
 .about-container {
@@ -283,6 +318,12 @@ section {
     justify-content: center;
     align-items: center;
     height: inherit;
+}
+
+@media (max-width: 1024px) {
+    .about-container {
+        max-width: 800px;
+    }
 }
 
 @media (max-width: 450px) {

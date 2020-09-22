@@ -80,21 +80,59 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
             'title': 'Dr Insights',
             'description': 'This is a description',
             'image_url': 'https://via.placeholder.com/400',
+            'tools': [
+                'Vue.js',
+                'Vuetify',
+                'Laravel PHP',
+                'Digital Ocean',
+            ],
+            'live_url': 'https://dr-insights.gaben.tech/',
+            'code_url': 'https://gitlab.com/TheGreatGaben/dr-insights-frontend',
         },
         'shibumi': {
             'title': 'Python OCR MVP',
             'description': 'Python',
             'image_url': 'https://via.placeholder.com/450',
+            'tools': [
+                'React',
+                'Next.js',
+                'Redux',
+                'Fabric.js',
+                'Ant Design',
+                'Python',
+                'Flask',
+                'OpenCV-Python',
+                'Tesseract OCR',
+                'Google Cloud Platform',
+            ],
+            'live_url': 'https://shibumi.gaben.tech/',
+            'code_url': 'https://gitlab.com/TheGreatGaben/python-ocr-mvp',
         },
         'mopress': {
             'title': 'MOPress',
             'description': 'Tantan',
             'image_url': 'https://via.placeholder.com/500',
+            'tools': [
+                'Bootstrap',
+                'jQuery',
+                'Laravel Blade',
+                'Laravel PHP',
+                'Node.js',
+                'Alibaba Cloud',
+            ],
+            'live_url': 'https://tantannews.com/',
         },
         'makkiah': {
             'title': 'Makkiah',
             'description': 'Makkiah',
             'image_url': 'https://via.placeholder.com/550',
+            'tools': [
+                'React',
+                'Ant Design',
+                'Laravel PHP',
+                'Digital Ocean',
+            ],
+            'live_url': 'https://makkiah.online/',
         },
     }
 
@@ -103,4 +141,23 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
     modal.find('.modal-title').text(portfolioDetail.title);
     modal.find('.modal-body p').text(portfolioDetail.description);
     modal.find('.modal-body img').attr('src', portfolioDetail.image_url);
+
+    const portfolioTools = modal.find('.modal-body .portfolio-tools');
+    portfolioTools.empty();
+    for (let i = 0; i < portfolioDetail.tools.length; i++) {
+        const tool = portfolioDetail.tools[i];
+        portfolioTools.append(`<span class="badge badge-pill badge-primary ml-2">${tool}</span>`);
+    }
+
+    $('#portfolio-live-btn').attr('href', portfolioDetail.live_url);
+
+    const codeBtn = $('#portfolio-code-btn');
+    if (!portfolioDetail.code_url) {
+        if (!codeBtn.hasClass('d-none'))
+            codeBtn.addClass('d-none');
+
+    } else if (codeBtn.hasClass('d-none'))
+        codeBtn.removeClass('d-none');
+
+    codeBtn.attr('href', portfolioDetail.code_url);
 })

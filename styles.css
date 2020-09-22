@@ -8,6 +8,11 @@ body {
     background-color: #1d2024 !important;
 }
 
+.modal-content {
+    background-color: #292F36;
+    color: #afbac4;
+}
+
 .left-arrow-link {
     position: fixed;
     top: 50%;
@@ -98,8 +103,8 @@ body {
 }
 
 section {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 
     flex: 0 0 auto;
     background: #353b43;
@@ -123,8 +128,25 @@ section {
     }
 }
 
+.home-content h2 {
+    font-size: 20px;
+    color: #57cbcc;
+}
+
+.home-content h1 {
+    font-weight: 700;
+    font-size: 70px;
+}
+
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 60px;
+    }
+}
+
 .home-content p {
     max-width: 500px;
+    color: #afbac4;
 }
 
 .portfolio-container {

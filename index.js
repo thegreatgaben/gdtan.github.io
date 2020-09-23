@@ -78,8 +78,8 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
     const portfolioDetailsMap = {
         'pce': {
             'title': 'Dr Insights',
-            'description': '<p>Dr Insights is an admin web application that helps businesses to keep track of their cashflows on each of their projects. The main target audience was the SME contractors involved in property development here in Malaysia, where we found that many of them are still keeping track of their income and expenses tediously through Excel spreadsheets, and business owners only being able to see the health status of the projects in a monthly meeting.</p>\
-            <p>The main feature of this app is the dashboard, where they are able to have an overview of their periodic nett cashflow, the ongoing health of their projects and the performance of each project manager, and also being able to have a thorough breakdown of those values so they could gain insight on what is needed to be done.</p>',
+            'description': '<p>Dr Insights is an admin web application that helps businesses to keep track of their cash flows on each of their projects. The main target audience was the SME contractors involved in property development here in Malaysia, where we found that many of them are still keeping track of their income and expenses tediously through Excel spreadsheets, and business owners only being able to see the health status of the projects in a monthly meeting.</p>\
+            <p>The main feature of this app is the dashboard, where they are able to have an overview of their periodic nett cash flow, the ongoing health of their projects and the performance of each project manager, and also being able to have a thorough breakdown of those values so they could gain insight on what is needed to be done.</p>',
             'image_url': 'static/img/pce.gif',
             'tools': [
                 'Vue.js',

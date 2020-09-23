@@ -83,6 +83,12 @@ a {
 }
 /**********************/
 
+@media (min-width: 1024px) {
+    .resume-nav {
+        margin-left: 20px;
+    }
+}
+
 .left-arrow-link {
     position: fixed;
     top: 50%;

@@ -29,6 +29,10 @@ span, p {
     color: var(--secondary-color);
 }
 
+a {
+    color: var(--primary-color);
+}
+
 /* Bootstrap overrides */
 .bg-dark {
     background-color: #1d2024 !important;
@@ -450,9 +454,5 @@ section {
     .contact-detail a {
         margin-left: 60px;
     }
-}
-
-.icon-credits a {
-    color: var(--primary-color);
 }
 

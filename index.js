@@ -1,6 +1,9 @@
 const homeNav = document.getElementById('home-nav');
 let currentActive = homeNav;
 
+let firstTimeInPortfolio = true;
+let firstTimeInAbout = true;
+
 function urlHashHandler(hash) {
     const leftArrowLink = document.getElementById('left-arrow-link');
     const leftArrow = leftArrowLink.firstElementChild;
@@ -28,6 +31,14 @@ function urlHashHandler(hash) {
         leftArrowLink.href = '#home';
         rightArrowLink.href = '#about';
 
+        if (firstTimeInPortfolio) {
+            const itemList = document.getElementsByClassName('portfolio-item');
+            for (let i = 0; i < itemList.length; i++) {
+                itemList[i].classList.add(`item-${i+1}`);
+            }
+            firstTimeInPortfolio = false;
+        }
+
         portfolioSection.style = 'overflow-y: scroll';
 
     } else if (hash === '#about') {
@@ -38,6 +49,17 @@ function urlHashHandler(hash) {
         }
         leftArrowLink.href = '#portfolio';
         rightArrowLink.href = '#contact';
+
+        if (firstTimeInAbout) {
+            const itemList = document.getElementsByClassName('about-paragraph');
+            for (let i = 0; i < itemList.length; i++) {
+                itemList[i].classList.add(`paragraph-${i+1}`);
+            }
+            const imageFilter = document.getElementsByClassName('about-image-filter')[0];
+            imageFilter.classList.add('about-image-filter-defrosting');
+
+            firstTimeInAbout = false;
+        }
 
         portfolioSection.style = 'overflow-y: hidden';
 
@@ -71,6 +93,7 @@ window.addEventListener('hashchange', function () {
     urlHashHandler(window.location.hash);
 });
 
+// Bootstrap still depends on jQuery
 $('#portfolioModal').on('show.bs.modal', function (event) {
     const trigger = $(event.relatedTarget);
     const portfolio = trigger.data('portfolio');

@@ -152,7 +152,7 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
         'makkiah': {
             'title': 'Makkiah',
             'description': '<p>This is a project that we did during the Movement Control Order (MCO) period in Malaysia when Coronavirus began spreading here. It is a mobile Progressive Web App (PWA) that enables sellers to set up an online shop and sell their products primarily through WhatsApp. The target audience was the small business owners that have no online presence yet. The main purpose was to empower these sellers to continue selling their products online, while they were unable to do so in their physical shop, due to MCO.</p>',
-            'image_url': 'static/img/makkiah-cover.png',
+            'image_url': 'static/img/makkiah-in-modal.png',
             'tools': [
                 'React',
                 'Ant Design',

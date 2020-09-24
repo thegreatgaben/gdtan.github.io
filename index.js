@@ -1,8 +1,14 @@
 const homeNav = document.getElementById('home-nav');
 let currentActive = homeNav;
 
-let firstTimeInPortfolio = true;
-let firstTimeInAbout = true;
+let portfolioReached = false;
+let aboutReached = false;
+
+const portfolioSection = document.getElementById('portfolio');
+const aboutSection = document.getElementById('about');
+
+// Website is horizontal only in 'large' screens, otherwise its vertical
+const largeScreen = window.innerWidth > 990;
 
 function urlHashHandler(hash) {
     const leftArrowLink = document.getElementById('left-arrow-link');
@@ -10,9 +16,6 @@ function urlHashHandler(hash) {
 
     const rightArrowLink = document.getElementById('right-arrow-link');
     const rightArrow = rightArrowLink.firstElementChild;
-
-    const portfolioSection = document.getElementById('portfolio');
-    const aboutSection = document.getElementById('about');
 
     if (hash === '' || hash === '#home') {
         if (rightArrow.classList.contains('d-none')) {
@@ -31,15 +34,11 @@ function urlHashHandler(hash) {
         leftArrowLink.href = '#home';
         rightArrowLink.href = '#about';
 
-        if (firstTimeInPortfolio) {
-            const itemList = document.getElementsByClassName('portfolio-item');
-            for (let i = 0; i < itemList.length; i++) {
-                itemList[i].classList.add(`item-${i+1}`);
-            }
-            firstTimeInPortfolio = false;
-        }
+        if (!portfolioReached)
+            animatePortfolioSection();
 
-        portfolioSection.style = 'overflow-y: scroll';
+        if (largeScreen)
+            portfolioSection.style = 'overflow-y: scroll';
 
     } else if (hash === '#about') {
         if (leftArrow.classList.contains('d-none')) {
@@ -50,21 +49,12 @@ function urlHashHandler(hash) {
         leftArrowLink.href = '#portfolio';
         rightArrowLink.href = '#contact';
 
-        if (firstTimeInAbout) {
-            const itemList = document.getElementsByClassName('about-paragraph');
-            for (let i = 0; i < itemList.length; i++) {
-                itemList[i].classList.add(`paragraph-${i+1}`);
-            }
-            const imageFilter = document.getElementsByClassName('about-image-filter')[0];
-            imageFilter.classList.add('about-image-filter-defrosting');
+        if (!aboutReached)
+            animateAboutSection();
 
-            firstTimeInAbout = false;
-        }
-
-        portfolioSection.style = 'overflow-y: hidden';
-
-        if (window.innerWidth < 768) {
-            aboutSection.style = 'overflow-y: scroll';
+        if (largeScreen) {
+            portfolioSection.style = 'overflow-y: hidden';
+            aboutSection.style = 'overflow-y: hidden';
         }
 
     } else if (hash === '#contact') {
@@ -73,12 +63,33 @@ function urlHashHandler(hash) {
         }
         rightArrow.classList.add('d-none');
         leftArrowLink.href = '#about';
-
-        aboutSection.style = 'overflow-y: hidden';
     }
 
+    setCurrentActiveSection(hash.substr(1));
+}
+
+function animatePortfolioSection() {
+    const itemList = document.getElementsByClassName('portfolio-item');
+    for (let i = 0; i < itemList.length; i++) {
+        itemList[i].classList.add(`item-${i+1}`);
+    }
+    portfolioReached = true;
+}
+
+function animateAboutSection() {
+    const itemList = document.getElementsByClassName('about-paragraph');
+    for (let i = 0; i < itemList.length; i++) {
+        itemList[i].classList.add(`paragraph-${i+1}`);
+    }
+    const imageFilter = document.getElementsByClassName('about-image-filter')[0];
+    imageFilter.classList.add('about-image-filter-defrosting');
+
+    aboutReached = true;
+}
+
+function setCurrentActiveSection(sectionName) {
     currentActive.classList.remove('active');
-    currentActive = document.getElementById(`${hash.substr(1)}-nav`);
+    currentActive = document.getElementById(`${sectionName}-nav`);
     currentActive.classList.add('active');
 }
 
@@ -92,6 +103,46 @@ window.addEventListener('load', function() {
 window.addEventListener('hashchange', function () {
     urlHashHandler(window.location.hash);
 });
+
+function getElementTopOffset(el) {
+    let rect = el.getBoundingClientRect();
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return rect.top + scrollTop;
+}
+
+function getElementBottomOffset(el) {
+    let rect = el.getBoundingClientRect();
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return rect.bottom + scrollTop;
+}
+
+function checkSectionInView(section) {
+    const sectionTop = getElementTopOffset(section);
+    const sectionBottom = getElementBottomOffset(section);
+    const sectionInView = window.scrollY >= sectionTop && window.scrollY < sectionBottom;
+    if (sectionInView)
+        setCurrentActiveSection(section.id);
+}
+
+if (!largeScreen) {
+    window.addEventListener('scroll', function () {
+        const portfolioSectionTop = getElementTopOffset(portfolioSection);
+        const portfolioThreshold = portfolioSectionTop * 0.35;
+        if (!portfolioReached && (window.scrollY > portfolioThreshold))
+            animatePortfolioSection();
+
+
+        const aboutSectionTop = getElementTopOffset(aboutSection);
+        const aboutThreshold = aboutSectionTop - (aboutSectionTop * 0.25);
+        if (!aboutReached && (window.scrollY > aboutThreshold))
+            animateAboutSection();
+
+        checkSectionInView(document.getElementById('home'));
+        checkSectionInView(portfolioSection);
+        checkSectionInView(aboutSection);
+        checkSectionInView(document.getElementById('contact'));
+    });
+}
 
 let $currentDemoShowing = null;
 // Bootstrap still depends on jQuery

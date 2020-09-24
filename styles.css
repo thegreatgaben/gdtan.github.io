@@ -210,6 +210,27 @@ section {
     background: #353b43;
 }
 
+/* Making the site become vertical on mobile */
+@media (max-width: 990px) {
+    html {
+        scroll-behavior: smooth;
+    }
+    .site-container {
+        width: auto;
+        height: auto;
+        max-height: 100%;
+
+        display: block;
+        overflow-y: scroll;
+    }
+    section {
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+    }
+}
+
+
 .home-container {
     display: flex;
     flex-direction: column;
@@ -492,7 +513,7 @@ section {
 }
 
 .about-image-filter-defrosting {
-    animation: defrost 2.5s ease-out;
+    animation: defrost 2s ease-out;
 }
 
 .about-image img {

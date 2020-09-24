@@ -464,10 +464,6 @@ section {
     animation: fadeDown 1.5s linear;
 }
 
-.paragraph-3 {
-    animation: fadeDown 2.5s linear;
-}
-
 .about-image {
     margin: 0 auto;
     max-width: 300px;

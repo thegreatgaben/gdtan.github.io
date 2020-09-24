@@ -57,6 +57,12 @@ a {
     background-color: #353b43;
 }
 
+@media (max-width: 480px) {
+    .modal-dialog {
+        margin: 0;
+    }
+}
+
 @media (min-width: 768px) {
     .modal-dialog {
         max-width: 700px;
@@ -332,11 +338,14 @@ section {
     }
     .portfolio-content {
         margin-top: 0px;
-        margin-bottom: 40px;
+        margin-bottom: 80px;
     }
     .portfolio-grid {
         grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
         grid-auto-rows: 195px;
+    }
+    #portfolio-code-btn {
+        margin-top: 10px;
     }
 }
 

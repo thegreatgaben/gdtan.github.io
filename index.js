@@ -108,6 +108,7 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
             'tools': [
                 'Vue.js',
                 'Vuetify',
+                'Vuex',
                 'Laravel PHP',
                 'Digital Ocean',
             ],
@@ -117,7 +118,7 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
         'shibumi': {
             'title': 'Python OCR MVP',
             'description': '<p>This project was a minimum viable product (MVP), that aimed to help designers in the carton box printing industry in the Southeast Asia region to work more efficiently. We had an ambitious goal to make it an alternative web solution to Adobe Illustrator, that has tools specially made to benefit carton box printing designers. One such tool was to employ Optical Character Recognition (OCR) and Font matching, as well as Color Separation on an image. OCR and Color Separation was only implemented in this case. I worked on the OCR part, while one of my other colleague worked on Color Separation. I also contributed to the development of the frontend application.</p>\
-            <p> Despite only being an MVP, it was a great learning experience to be able integrate image processing techniques into our web application. The solution in the end was not a perfect one and had lots of room for improvement, but this project succeeded in attracting new clients to our company.</p>',
+            <p> Despite only being an MVP, it was a great learning experience to be able to integrate image processing techniques into our web application. The solution in the end was not a perfect one and had lots of room for improvement, but this project succeeded in attracting new clients to our company.</p>',
             'image_url': isMobile ? 'static/img/shibumi-mobile.gif' : 'static/img/shibumi.gif',
             'tools': [
                 'React',
@@ -132,12 +133,12 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
                 'Google Cloud Platform',
             ],
             'live_url': 'https://shibumi.gaben.tech/',
-            'code_url': 'https://gitlab.com/TheGreatGaben/python-ocr-mvp',
+            'code_url': 'https://github.com/thegreatgaben/python-ocr-mvp',
         },
         'mopress': {
             'title': 'Tantan News / MOPress',
             'description': '<p>Tantan News is a Chinese social news website. The website already existed before we took over and did some major enhancements for the site. Some things I specifically did for them include placement of Google Ad units, integration with Google Tag Manager (GTM) for custom dimension and event tracking, video player integration from a third party vendor, and also a page for live tracking of Coronavirus cases in Malaysia and other countries, with related articles to that topic.</p>\
-            <p>There is also another platform that powers the site called <a href="https://www.mopress.io/">MOPress</a>, that enables news publishers to source content from a group of users known as freelance mobile journalists (MOJOs). We develop lots of features and enhancements for it too. One of the major features that I helped to develop was a gamification system for the MOJOs, whereby each of them is assigned a rank based on how much articles they write and the number of pageviews they are getting from each article. As they increase in rank, they are entitled to receive more credits on the platform which they can withdraw as cash. This is to incentivize them to create more quality news content.</p>\
+            <p>There is also another platform that powers the site called <a href="https://www.mopress.io/">MOPress</a>, that enables news publishers to source content from a group of users known as freelance mobile journalists (MOJOs). We develop lots of features and enhancements for it too. One of the major features that I helped to develop was a gamification system for the MOJOs, whereby each of them is assigned a rank based on how much articles they write and the number of page views they are getting from each article. As they increase in rank, they are entitled to receive more credits on the platform which they can withdraw as cash. This is to incentivize them to create more quality news content.</p>\
             <p>This project was a unique experience as instead of starting from scratch, I was already working on a fairly sized codebase written by previous developers.</p>',
             'image_url': isMobile ? 'static/img/tantan-mobile.gif' : 'static/img/tantan.gif',
             'tools': [

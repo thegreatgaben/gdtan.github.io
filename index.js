@@ -37,8 +37,8 @@ function urlHashHandler(hash) {
         if (!portfolioReached)
             animatePortfolioSection();
 
-        if (largeScreen)
-            portfolioSection.style = 'overflow-y: scroll';
+        // if (largeScreen)
+        //     portfolioSection.style = 'overflow-y: scroll';
 
     } else if (hash === '#about') {
         if (leftArrow.classList.contains('d-none')) {

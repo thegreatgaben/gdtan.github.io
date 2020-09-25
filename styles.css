@@ -104,6 +104,20 @@ a {
     .resume-nav {
         margin-left: 20px;
     }
+
+    .resume-btn-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 990px) {
+    .resume-nav {
+        display: none;
+    }
+
+    .resume-btn-mobile {
+        animation: fadeIn 2s;
+    }
 }
 
 .left-arrow-link {

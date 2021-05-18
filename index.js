@@ -62,7 +62,9 @@ function urlHashHandler(hash) {
 function animatePortfolioSection() {
     const itemList = document.getElementsByClassName('portfolio-item');
     for (let i = 0; i < itemList.length; i++) {
-        itemList[i].classList.add(`item-${i+1}`);
+        const item = itemList[i]
+        item.classList.add(`item-${i+1}`);
+        item.style = ''
     }
     portfolioReached = true;
 }
@@ -70,7 +72,9 @@ function animatePortfolioSection() {
 function animateAboutSection() {
     const itemList = document.getElementsByClassName('about-paragraph');
     for (let i = 0; i < itemList.length; i++) {
-        itemList[i].classList.add(`paragraph-${i+1}`);
+        const item = itemList[i]
+        item.classList.add(`paragraph-${i+1}`);
+        item.style = ''
     }
     const imageFilter = document.getElementsByClassName('about-image-filter')[0];
     imageFilter.classList.add('about-image-filter-defrosting');

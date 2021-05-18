@@ -43,11 +43,9 @@ function urlHashHandler(hash) {
     } else if (hash === '#about') {
         if (leftArrow.classList.contains('d-none')) {
             leftArrow.classList.remove('d-none');
-        } else if (rightArrow.classList.contains('d-none')) {
-            rightArrow.classList.remove('d-none');
         }
+        rightArrow.classList.add('d-none');
         leftArrowLink.href = '#portfolio';
-        rightArrowLink.href = '#contact';
 
         if (!aboutReached)
             animateAboutSection();
@@ -56,13 +54,6 @@ function urlHashHandler(hash) {
             portfolioSection.style = 'overflow-y: hidden';
             aboutSection.style = 'overflow-y: hidden';
         }
-
-    } else if (hash === '#contact') {
-        if (leftArrow.classList.contains('d-none')) {
-            leftArrow.classList.remove('d-none');
-        }
-        rightArrow.classList.add('d-none');
-        leftArrowLink.href = '#about';
     }
 
     setCurrentActiveSection(hash.substr(1));
@@ -140,7 +131,6 @@ if (!largeScreen) {
         checkSectionInView(document.getElementById('home'));
         checkSectionInView(portfolioSection);
         checkSectionInView(aboutSection);
-        checkSectionInView(document.getElementById('contact'));
     });
 }
 

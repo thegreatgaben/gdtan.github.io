@@ -341,6 +341,7 @@ section {
     width: 100%;
 }
 
+
 .portfolio-grid {
     width: 100%;
     display: grid;
@@ -440,6 +441,11 @@ section {
 .portfolio-modal-image img {
     width: 100%;
     height: auto;
+}
+
+.portfolio-description a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .about-container {

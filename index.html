@@ -79,6 +79,12 @@
                         <h1>Portfolio</h1>
                         <p>Some of the latest projects that I have worked on so far.</p>
                         <div class="portfolio-grid">
+                            <div class="portfolio-item" style="visibility: hidden" data-toggle="modal" data-target="#portfolioModal" data-portfolio="rovr">
+                                <div class="portfolio-title bg-dark">
+                                    <h5>ROVR</h5>
+                                </div>
+                                <img src="static/img/rovr-cover.png" class="card-img-top" alt="ROVR">
+                            </div>
                             <div class="portfolio-item" style="visibility: hidden" data-toggle="modal" data-target="#portfolioModal" data-portfolio="pce">
                                 <div class="portfolio-title bg-dark">
                                     <h5>Dr Insights</h5>
@@ -96,12 +102,6 @@
                                     <h5>Tantan News / MOPress</h5>
                                 </div>
                                 <img src="static/img/tantan-cover.png" class="card-img-top" alt="Tantan News">
-                            </div>
-                            <div class="portfolio-item" style="visibility: hidden" data-toggle="modal" data-target="#portfolioModal" data-portfolio="makkiah">
-                                <div class="portfolio-title bg-dark">
-                                    <h5>Makkiah</h5>
-                                </div>
-                                <img src="static/img/makkiah-cover.png" class="card-img-top" alt="Makkiah">
                             </div>
                         </div>
                     </div>
@@ -139,6 +139,10 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <picture class="portfolio-modal-image d-none" id="rovr-demo">
+                            <source media="(max-width: 480px)" srcset="static/img/rovr-in-modal-mobile.png">
+                            <img src="static/img/rovr-in-modal.png" alt="ROVR Demo">
+                        </picture>
                         <picture class="portfolio-modal-image d-none" id="pce-demo">
                             <source media="(max-width: 480px)" srcset="static/img/pce-mobile.gif">
                             <img src="static/img/pce.gif" alt="PCE Demo">
@@ -150,10 +154,6 @@
                         <picture class="portfolio-modal-image d-none" id="mopress-demo">
                             <source media="(max-width: 480px)" srcset="static/img/tantan-mobile.gif">
                             <img src="static/img/tantan.gif" alt="Tantan Demo">
-                        </picture>
-                        <picture class="portfolio-modal-image d-none" id="makkiah-demo">
-                            <source media="(max-width: 480px)" srcset="static/img/makkiah-in-modal-mobile.png">
-                            <img src="static/img/makkiah-in-modal.png" alt="Makkiah Demo">
                         </picture>
 
                         <p class="text-center d-none"><b>No GIF for this one unfortunately :(</b></p>

@@ -204,6 +204,20 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
             ],
             'live_url': 'https://makkiah.online/',
         },
+        'rovr': {
+            'title': 'ROVR',
+            'description': '<p>ROVR is a project by Petronas Digital Sdn Bhd, which aims to bring an innovative refuelling experience to businesses and consumers.</p>\
+            <p>The backend platform is powered by Amazon Web Services (AWS), where the infrastructure is already provided for us to build microservices. These microservices are programmed with JavaScript in Node.js environment. Some of the AWS services that we use mainly are Lambda to handle the business logic, SQS for queueing events and inter-communication between Lambdas, S3 for file storage, and last but not least, DynamoDB as our primary data storage, and ElasticSearch as our secondary data storage. The overall architecture is event-driven. For example, we make use of DynamoDB streams and Lambda Triggers to process and sync data from our primary storage to secondary storage, whenever a creation, update or deletion event occurs in the primary storage.</p>\
+            <p>I learned about the term Infrastructure as code (IaC) from working on this project as well. Our AWS infrastructure is defined using configuration files or code, and are deployed automatically via CI/CD, instead of manually setting them on the AWS web console itself. We used the <a href="https://www.serverless.com/" target="_blank">Serverless Framework</a> in order to do that.</p>\
+            <p>My experience here was definitely eye-opening as it gave me a glimpse on what it\'s like to build software in a serverless computing environment.</p>',
+            'tools': [
+                'Node.js',
+                'AWS',
+                'Serverless Framework',
+                'ElasticSearch',
+            ],
+            'live_url': 'https://www.rovr2u.com/'
+        }
     }
 
     const portfolioDetail = portfolioDetailsMap[portfolio];
@@ -218,7 +232,7 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
     $currentDemoShowing.removeClass('d-none');
 
     const noGifCaption = modal.find('.modal-body p');
-    if (portfolio === 'makkiah') {
+    if (portfolio === 'makkiah' || portfolio === 'rovr') {
         noGifCaption.removeClass('d-none');
     } else if (!noGifCaption.hasClass('d-none')) {
         noGifCaption.addClass('d-none');

@@ -157,7 +157,7 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
                 'Digital Ocean',
             ],
             'live_url': 'https://dr-insights.gaben.tech/',
-            'code_url': 'https://gitlab.com/TheGreatGaben/dr-insights-frontend',
+            // 'code_url': 'https://gitlab.com/TheGreatGaben/dr-insights-frontend',
         },
         'shibumi': {
             'title': 'Python OCR MVP',
@@ -251,7 +251,12 @@ $('#portfolioModal').on('show.bs.modal', function (event) {
         portfolioTools.append(`<span class="badge badge-pill badge-primary ${extraClass}">${tool}</span>`);
     }
 
-    $('#portfolio-live-btn').attr('href', portfolioDetail.live_url);
+    if (portfolio === 'pce' || portfolio === 'shibumi') {
+        $('#portfolio-live-btn').addClass('d-none')
+    } else {
+        $('#portfolio-live-btn').removeClass('d-none')
+        $('#portfolio-live-btn').attr('href', portfolioDetail.live_url);
+    }
 
     const codeBtn = $('#portfolio-code-btn');
     if (!portfolioDetail.code_url) {
